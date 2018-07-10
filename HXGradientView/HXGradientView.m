@@ -14,6 +14,16 @@
 @end
 
 
+CAGradientLayer * HXColorLayer(CGRect frame, NSArray * colors)
+{
+    CAGradientLayer * gradientLayer = [CAGradientLayer layer];
+    gradientLayer.colors = colors;
+    gradientLayer.startPoint = CGPointMake(0, 0);
+    gradientLayer.endPoint = CGPointMake(0, 1);
+    gradientLayer.frame = frame;
+    return gradientLayer;
+}
+
 @implementation UIView (HXGradientColor)
 
 - (void)hx_gradientWithColors:(NSArray <UIColor *>*)colors
@@ -86,6 +96,20 @@
     CGContextRestoreGState(context);
 }
 
+- (void)hx_maskLayerWithColors:(NSArray <UIColor *>*)colors
+{
+    if (!colors || !colors.count) { return;}
+    NSMutableArray * CGColors = [[NSMutableArray alloc] initWithCapacity:colors.count];
+    [colors enumerateObjectsUsingBlock:^(UIColor * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [CGColors addObject:(__bridge id)[obj CGColor]];
+    }];
+    CALayer * maskLayer = HXColorLayer(self.frame, CGColors);
+    [self.superview.layer addSublayer:maskLayer];
+    
+    maskLayer.mask = self.layer;
+    self.frame = maskLayer.bounds;
+}
+
 @end
 
 
@@ -96,11 +120,12 @@
     if (self.drawDirection == HXGradientColorDirectionNone) {
         self.drawDirection = HXGradientColorDirectionTopToBottom;
     }
-    [self hx_gradientWithColors:self.colors
+    [self hx_gradientWithColors:self.backgroundColors
                            rect:rect
                   drawDirection:self.drawDirection
                         context:UIGraphicsGetCurrentContext()];
     [super drawRect:rect];
+    [self hx_maskLayerWithColors:self.textColors];
 }
 
 @end
@@ -113,7 +138,7 @@
     if (self.drawDirection == HXGradientColorDirectionNone) {
         self.drawDirection = HXGradientColorDirectionTopToBottom;
     }
-    [self hx_gradientWithColors:self.colors
+    [self hx_gradientWithColors:self.backgroundColors
                            rect:rect
                   drawDirection:self.drawDirection
                         context:UIGraphicsGetCurrentContext()];

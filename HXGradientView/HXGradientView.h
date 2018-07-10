@@ -37,14 +37,22 @@ typedef NS_ENUM(NSInteger, HXGradientColorDirection) {
 
 @interface HXGradientLabel : UILabel
 
-@property (nonatomic, copy) NSArray <UIColor *> * colors;
+/**
+ 文字渐变 （和背景渐变不共存，只能设置一个）
+ */
+@property (nonatomic, copy) NSArray <UIColor *> * textColors;
+
+/**
+ 背景渐变 （和文字渐变不共存，只能设置一个）
+ */
+@property (nonatomic, copy) NSArray <UIColor *> * backgroundColors;
 @property (nonatomic, assign) HXGradientColorDirection drawDirection;
 
 @end
 
 @interface HXGradientButton : UIButton
 
-@property (nonatomic, copy) NSArray <UIColor *> * colors;
+@property (nonatomic, copy) NSArray <UIColor *> * backgroundColors;
 @property (nonatomic, assign) HXGradientColorDirection drawDirection;
 
 @end

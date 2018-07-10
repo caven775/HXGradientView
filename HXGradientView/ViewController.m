@@ -22,33 +22,34 @@
     
     HXGradientLabel * label1 = [[HXGradientLabel alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
     label1.text = @"6666";
-    label1.colors = @[[UIColor redColor], [UIColor yellowColor]];
-    label1.drawDirection = HXGradientColorDirectionTopToBottom;
+    label1.textColors = @[[UIColor blueColor], [UIColor whiteColor]];
+//    label1.backgroundColors = @[[UIColor redColor], [UIColor yellowColor]];
+//    label1.drawDirection = HXGradientColorDirectionTopToBottom;
     [self.view addSubview:label1];
     
-    HXGradientLabel * label2 = [[HXGradientLabel alloc] initWithFrame:CGRectMake(220, 100, 100, 100)];
-    label2.text = @"6666";
-    label2.colors = @[[UIColor redColor], [UIColor yellowColor]];
-    label2.drawDirection = HXGradientColorDirectionBottomToTop;
-    [self.view addSubview:label2];
-    
-    HXGradientLabel * label3 = [[HXGradientLabel alloc] initWithFrame:CGRectMake(100, 230, 100, 100)];
-    label3.text = @"6666";
-    label3.colors = @[[UIColor redColor], [UIColor yellowColor]];
-    label3.drawDirection = HXGradientColorDirectionLeftToRight;
-    [self.view addSubview:label3];
-    
-    HXGradientLabel * label4 = [[HXGradientLabel alloc] initWithFrame:CGRectMake(220, 230, 100, 100)];
-    label4.text = @"6666";
-    label4.colors = @[[UIColor redColor], [UIColor yellowColor]];
-    label4.drawDirection = HXGradientColorDirectionRightToLeft;
-    [self.view addSubview:label4];
-    
-    HXGradientLabel * label5 = [[HXGradientLabel alloc] initWithFrame:CGRectMake(100, 360, 100, 100)];
-    label5.text = @"6666";
-    label5.colors = @[[UIColor redColor], [UIColor yellowColor]];
-    label5.drawDirection = HXGradientColorDirectionCenterToAround;
-    [self.view addSubview:label5];
+//    HXGradientLabel * label2 = [[HXGradientLabel alloc] initWithFrame:CGRectMake(220, 100, 100, 100)];
+//    label2.text = @"6666";
+//    label2.colors = @[[UIColor redColor], [UIColor yellowColor]];
+//    label2.drawDirection = HXGradientColorDirectionBottomToTop;
+//    [self.view addSubview:label2];
+//
+//    HXGradientLabel * label3 = [[HXGradientLabel alloc] initWithFrame:CGRectMake(100, 230, 100, 100)];
+//    label3.text = @"6666";
+//    label3.colors = @[[UIColor redColor], [UIColor yellowColor]];
+//    label3.drawDirection = HXGradientColorDirectionLeftToRight;
+//    [self.view addSubview:label3];
+//
+//    HXGradientLabel * label4 = [[HXGradientLabel alloc] initWithFrame:CGRectMake(220, 230, 100, 100)];
+//    label4.text = @"6666";
+//    label4.colors = @[[UIColor redColor], [UIColor yellowColor]];
+//    label4.drawDirection = HXGradientColorDirectionRightToLeft;
+//    [self.view addSubview:label4];
+//
+//    HXGradientLabel * label5 = [[HXGradientLabel alloc] initWithFrame:CGRectMake(100, 360, 100, 100)];
+//    label5.text = @"6666";
+//    label5.colors = @[[UIColor redColor], [UIColor yellowColor]];
+//    label5.drawDirection = HXGradientColorDirectionCenterToAround;
+//    [self.view addSubview:label5];
     
 //    HXGradientButton * button = [HXGradientButton buttonWithType:UIButtonTypeCustom];
 //    button.frame = CGRectMake(100, 250, 100, 100);
